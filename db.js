@@ -7,7 +7,7 @@ const db = new Sequelize(databaseURL);
 db.sync()
   .then(console.log(`db synced`))
   // .catch(err => {
-  //   console.error(`Table schema fail`, err);         // in case hardcoded data to add and test!
+  //   console.error(`Table schema fail`, err);         // in case hardcoded data to add and test!   of course a hardcode fn is also needed then!
   //   process.exit(1);
   // })
   .catch(console.error);
