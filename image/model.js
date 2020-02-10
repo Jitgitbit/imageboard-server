@@ -7,4 +7,4 @@ const Image = db.define( `Image`, {
   url: Sequelize.TEXT,
 });
 
-module.exports = Image;
+module.exports = {Image};
