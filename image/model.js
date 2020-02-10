@@ -4,7 +4,7 @@ const db = require(`../db`)
 
 const Image = db.define( `Image`, {
   title: Sequelize.TEXT,
-  url: Sequelize.TEXT,
+  url: Sequelize.STRING,
 });
 
 module.exports = {Image};
