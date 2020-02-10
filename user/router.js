@@ -2,14 +2,19 @@ const { Router } = require("express");
 const { toJWT, toData } = require("../auth/jwt");
 const db = require("../db");
 const Sequelize = require("sequelize");
+const bcrypt = require(`bcrypt`);
 
 const router = new Router();
 
 router.post("/login", (request, response, next) => {
   const { email, password } = request.body;
+  // const user = {
+  //   email: req.body.email,
+  //   password: bcrypt.hashSync(req.body.password, 10)                //Look at this closely!!
+  // }
   User.create({
     email: email,
-    password: password
+    password: bcrypt.hashSync(password, 10)
   })
     .then(user => {
       if (!email || !password) {
