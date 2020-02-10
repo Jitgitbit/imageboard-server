@@ -6,6 +6,7 @@ const Image = require(`./image/model`)
 const Sequelize = require(`sequelize`);
 const imageRouter = require(`./image/router`)
 const authRouter = require(`./auth/router.js`)
+const userRouter = require(`./user/router.js`)
 const cors = require(`cors`);
 
 const port = process.env.PORT || 4000;
@@ -19,6 +20,7 @@ app.use(parserMiddleware)
 
 app.use(imageRouter);
 app.use(authRouter);
+app.use(userRouter);
 
 app.listen(port, () => console.log(`The imageboard-server API is listening on port ${port}!`));
 
