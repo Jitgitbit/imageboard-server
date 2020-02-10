@@ -5,11 +5,22 @@ const db = require(`./db`)
 const Image = require(`./image/model`)
 const Sequelize = require(`sequelize`);
 const imageRouter = require(`./image/router`)
+const cors = require(`cors`);
+
+const port = process.env.PORT || 4000;
 
 const app = express();
 
-const port = process.env.PORT || 4000;
+const corsMiddleware = cors()
+app.use(corsMiddleware)
+const parserMiddleware = express.json()  // body-parser and express have recently been put in one npm;
+app.use(parserMiddleware)
 
 app.use(imageRouter);
 
 app.listen(port, () => console.log(`The imageboard-server API is listening on port ${port}!`));
+
+
+
+
+
