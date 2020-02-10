@@ -1,5 +1,10 @@
 const express = require(`express`);
-const db = require(`./db`);
+// import db from `./db`;
+// import Image from `./image/model`;
+const db = require(`./db`)
+const Image = require(`./image/model`)
+const Sequelize = require(`sequelize`);
+
 
 const app = express();
 
