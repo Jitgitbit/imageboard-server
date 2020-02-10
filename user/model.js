@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../db')
 
-const User = sequelize.define('user', {
+const User = sequelize.define('User', {
   email: {
     type: Sequelize.STRING,
     allowNull: false
@@ -12,6 +12,6 @@ const User = sequelize.define('user', {
   },
 }, {
   timestamps: false,
-  tableName: 'users'
+  tableName: 'Users'
 })
 module.exports = User

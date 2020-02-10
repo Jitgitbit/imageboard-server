@@ -3,10 +3,11 @@ const { toJWT, toData } = require("../auth/jwt");
 const db = require("../db");
 const Sequelize = require("sequelize");
 const bcrypt = require(`bcrypt`);
+const User = require(`./model`)
 
 const router = new Router();
 
-router.post("/login", (request, response, next) => {
+router.post("/user", (request, response, next) => {
   const { email, password } = request.body;
   // const user = {
   //   email: req.body.email,
