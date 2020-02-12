@@ -10,7 +10,7 @@ const User = sequelize.define('User', {
   password: {
     type: Sequelize.STRING,
     allowNull: false,
-    unique: true
+    unique: true   //your choice, can be false too
   },
 }, {
   timestamps: false,
